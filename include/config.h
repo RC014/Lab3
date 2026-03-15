@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+// Aplicație activă: 1 = Lab 3.1 (achiziție + afișare), 2 = Lab 3.2 (condiționare semnal)
+#define ACTIVE_APP_LAB 2
+
 // Serial communication
 #define SERIAL_BAUDRATE 9600
 
@@ -25,5 +28,18 @@ typedef enum {
   SYS_STATE_ERROR,
   SYS_STATE_COUNT
 } app_sys_state_t;
+
+// ---------- Lab 3.2: Condiționare semnal ----------
+#define TASK_LAB32_ACQ_PERIOD_MS       20   // recurență achiziție + condiționare
+#define TASK_LAB32_ACQ_OFFSET_MS       0
+#define TASK_LAB32_DISPLAY_PERIOD_MS   500
+#define TASK_LAB32_DISPLAY_OFFSET_MS   50
+
+// Filtru "sare și piper": prag pentru considerare impuls (diferență față de mediana ferestrei)
+#define LAB32_IMPULSE_THRESHOLD        10
+// Filtru mediere ponderată: ponderi pentru 3 eșantioane [x[n-2], x[n-1], x[n]] -> 0.25, 0.5, 0.25
+// Conversie: encoder digital -> parametru fizic = poziție (counts); saturare în interval valid
+#define LAB32_PHYSICAL_MIN            -10000
+#define LAB32_PHYSICAL_MAX             10000
 
 #endif
