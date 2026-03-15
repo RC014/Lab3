@@ -1,13 +1,12 @@
 #include <Arduino.h>
-#include "../app_lab_2_2/app_lab_2_2.h"
+#include "../lib/app_lab_3_1/app_lab_3_1.h"
 
-// Rulăm direct aplicația pentru laboratorul 2_2
-void setup()
+void setup(void)
 {
-  app_lab_2_2_setup();
+  app_lab_3_1_setup();
 }
 
-void loop()
+void loop(void)
 {
-  app_lab_2_2_loop();
+  app_lab_3_1_loop();
 }
