@@ -1,27 +1,23 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// Aplicație activă: 1 = Lab 3.1 (achiziție + afișare), 2 = Lab 3.2 (condiționare semnal)
 #define ACTIVE_APP_LAB 2
 
-// Serial communication
 #define SERIAL_BAUDRATE 9600
 
-// KY040 Incremental Encoder pins (Arduino digital)
 #define ENCODER_CLK_PIN  4   // Clock (A) - quadrature
 #define ENCODER_DT_PIN   5   // Data (B) - quadrature
 #define ENCODER_SW_PIN   6   // Switch (buton encoder) - INPUT_PULLUP
 
 // FreeRTOS timing (milisecunde)
-// Task Encoder - achiziție encoder
-#define TASK_ENCODER_PERIOD_MS       10   // recurență achiziție (10 ms)
-#define TASK_ENCODER_START_OFFSET_MS 0    // offset față de start
+#define TASK_ENCODER_PERIOD_MS       10   // recurenta (10 ms)
+#define TASK_ENCODER_START_OFFSET_MS 0    // offset fata de start
 
 // Task Display - raport periodic
-#define TASK_DISPLAY_PERIOD_MS       500  // recurență afișare (500 ms)
-#define TASK_DISPLAY_START_OFFSET_MS 100  // offset față de start
+#define TASK_DISPLAY_PERIOD_MS       500  // recurenta afisare (500 ms)
+#define TASK_DISPLAY_START_OFFSET_MS 100  // offset fata de start
 
-// Stare sistem (semnale aplicație)
+// Stare sistem (semnale aplicatie)
 typedef enum {
   SYS_STATE_IDLE = 0,
   SYS_STATE_ACQUIRING,
